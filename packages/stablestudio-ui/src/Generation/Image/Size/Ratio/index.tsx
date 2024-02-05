@@ -55,7 +55,7 @@ export function Ratio({
         onDoubleClick={toggleFullControl}
       >
         <div className="flex w-1/3 items-center justify-start">
-          <Theme.Icon.Rectangle className="opacity-muted-extra w-[28px]" />
+          <Theme.Icon.Rectangle className="w-[28px]" />
         </div>
         <Theme.Tooltip
           delay={500}
@@ -69,7 +69,7 @@ export function Ratio({
           </h1>
         </Theme.Tooltip>
         <div className="flex w-1/3 items-center justify-end">
-          <Theme.Icon.Rectangle className="opacity-muted-extra w-[28px] rotate-90" />
+          <Theme.Icon.Rectangle className="w-[28px] rotate-90" />
         </div>
       </div>
       <Theme.Slider

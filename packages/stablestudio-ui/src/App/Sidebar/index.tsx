@@ -3,7 +3,6 @@ import { Theme } from "~/Theme";
 
 import { Resizer } from "./Resizer";
 import { Section } from "./Section";
-import { Shortcuts } from "./Shortcut";
 import { Tab, Tabs } from "./Tab";
 
 export * from "./Sidebars";
@@ -24,7 +23,7 @@ export function Sidebar({ position }: Sidebar.Props) {
   const bar = useMemo(
     () => (
       <>
-        <Tab.Buttons position={position} />
+        {/* <Tab.Buttons position={position} /> */}
         <Tab position={position} />
         <Tab.Bottoms position={position} />
       </>
@@ -55,12 +54,11 @@ export function Sidebar({ position }: Sidebar.Props) {
 }
 
 export declare namespace Sidebar {
-  export { Section, Shortcuts, Tab, Tabs };
+  export { Section, Tab, Tabs };
 }
 
 export namespace Sidebar {
   Sidebar.Section = Section;
-  Sidebar.Shortcuts = Shortcuts;
   Sidebar.Tab = Tab;
   Sidebar.Tabs = Tabs;
 

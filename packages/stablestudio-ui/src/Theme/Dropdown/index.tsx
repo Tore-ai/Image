@@ -10,7 +10,6 @@ export type Dropdown<
   value?: Value;
   options?: Options;
   onChange?: (item: Item) => void;
-
   title?: React.ReactNode;
   placeholder?: string;
   size?: Theme.Common.Size;
@@ -25,15 +24,12 @@ export type Dropdown<
 export function Dropdown<Options extends Dropdown.Options>({
   value,
   onChange,
-
   title,
   placeholder = "Select Option...",
   size = Theme.Common.Size.preset(),
   transparent,
   fullWidth,
-
   className,
-
   ...props
 }: Dropdown<Options>) {
   // TODO: Share with `Theme.Button`
@@ -67,7 +63,7 @@ export function Dropdown<Options extends Dropdown.Options>({
       ref={parentRef}
       className={classes(
         "group relative cursor-pointer rounded duration-150",
-        fullWidth && "w-[calc(100% + 0.5rem)] -mx-2",
+        fullWidth && "w-full",
         className
       )}
     >
@@ -108,11 +104,14 @@ export function Dropdown<Options extends Dropdown.Options>({
         )}
         {props.options?.map((item) => (
           <option key={item.value} value={item.value} disabled={item.disabled}>
-            {item.label}
+            <div className="flex w-full justify-between">
+              <div>{item.label}</div>
+              <div>{item.price}</div>
+            </div>
           </option>
         ))}
       </select>
-      <div className="pointer-events-none absolute top-0 right-1 inline-block h-full">
+      <div className="pointer-events-none absolute right-1 top-0 inline-block h-full">
         <div className="flex h-full w-full items-center justify-center">
           {open ? (
             <Theme.Icon.ChevronUp className="h-6 w-6" />
@@ -128,6 +127,7 @@ export function Dropdown<Options extends Dropdown.Options>({
 export namespace Dropdown {
   export type Options = Item[];
   export type Item = {
+    price: string;
     value: string;
     label: React.ReactNode;
     icon?: React.ReactNode;

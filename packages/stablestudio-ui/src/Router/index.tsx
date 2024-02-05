@@ -3,6 +3,7 @@ import * as ReactRouter from "react-router-dom";
 import { Editor } from "~/Editor";
 import { Generation } from "~/Generation";
 import { Plugin } from "~/Plugin";
+import { Profile } from "~/Profile";
 import { Settings } from "~/Settings";
 
 export function Router() {
@@ -39,12 +40,16 @@ export namespace Router {
               element: <Generation />,
             },
             {
-              path: "/edit",
-              element: <Editor />,
+              path: "/settings",
+              element: <Profile />,
             },
             {
-              path: "/settings",
-              element: <Settings />,
+              path: "/profile",
+              element: <Profile />,
+            },
+            {
+              path: "/billing",
+              element: <Profile />,
             },
             {
               path: "*",

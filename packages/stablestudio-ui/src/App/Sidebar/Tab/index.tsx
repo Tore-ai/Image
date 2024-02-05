@@ -38,10 +38,12 @@ export function Tab({ position }: App.Sidebar.Props) {
   );
 
   return (
-    <div
-      ref={setElement}
-      className={classes("flex min-h-0 shrink flex-col overflow-y-auto")}
-    />
+    <>
+      <div
+        ref={setElement}
+        className={classes("flex min-h-0 shrink flex-col overflow-y-auto")}
+      />
+    </>
   );
 }
 

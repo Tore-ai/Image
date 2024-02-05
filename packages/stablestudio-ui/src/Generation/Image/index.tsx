@@ -21,6 +21,7 @@ import { Sidebar } from "./Sidebar";
 import { Size } from "./Size";
 import { SpecialEffects } from "./SpecialEffects";
 import { Style, Styles } from "./Style";
+import { Subscription } from "./Subscription";
 import { TopBar } from "./TopBar";
 import { Upscale, Upscales } from "./Upscale";
 import { Variations } from "./Variation";
@@ -217,6 +218,7 @@ export declare namespace Image {
     Size,
     SpecialEffects,
     TopBar,
+    Subscription,
     Variations,
     Upscales,
     Upscale,
@@ -250,6 +252,7 @@ export namespace Image {
   Image.Size = Size;
   Image.SpecialEffects = SpecialEffects;
   Image.TopBar = TopBar;
+  Image.Subscription = Subscription;
   Image.Variations = Variations;
   Image.Upscales = Upscales;
   Image.Upscale = Upscale;

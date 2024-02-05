@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => {
     ...loadEnv(mode, process.cwd()),
 
     VITE_GIT_HASH: gitHash,
+    VITE_API_KEY: "sk-2kuMd6pX5c3n2eDbOloi1BRemWeOP2aEiTm06WT6yVYoJByg",
   };
 
   return {

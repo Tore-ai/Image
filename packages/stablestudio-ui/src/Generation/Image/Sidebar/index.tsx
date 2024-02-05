@@ -30,6 +30,7 @@ export function Sidebar() {
             onIdleClick={() => createDream()}
             fullWidth
           />
+          <Generation.Image.Subscription />
         </App.Sidebar.Tab.Bottom>
       }
     >
@@ -73,7 +74,7 @@ export namespace Sidebar {
             <Generation.Image.Count.Slider />
           </div>
         </App.Sidebar.Section>
-        {settingsOpen && <Advanced id={id} />}
+        {/* {settingsOpen && <Advanced id={id} />} */}
       </>
     );
   }

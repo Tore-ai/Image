@@ -141,7 +141,7 @@ export function Prompt({
   ) : (
     <div
       className={classes(
-        "group flex w-full gap-1 rounded border border-zinc-700 px-3 py-2 dark:bg-zinc-800",
+        "group flex w-full gap-1 rounded border border-zinc-700 px-3 py-2 dark:bg-zinc-800 hover:border-[#A7E000]",
         className
       )}
     >
@@ -152,17 +152,15 @@ export function Prompt({
               className="mr-auto p-0"
               transparent
               onClick={() => setExpanded(!expanded)}
-              icon={(props) => (
-                <Theme.Icon.ChevronRight
-                  {...props}
-                  className={classes(
-                    props.className,
-                    promptWeight >= 0 ? "text-green-500" : "text-red-500",
-                    expanded && "rotate-90",
-                    "p-0"
+              icon={
+                <>
+                  {promptWeight >= 0 ? (
+                    <Theme.Icon.Positive />
+                  ) : (
+                    <Theme.Icon.Negative />
                   )}
-                />
-              )}
+                </>
+              }
             >
               <h1 className="w-full font-light">
                 {(input.prompts[index]?.weight ?? 0) > 0

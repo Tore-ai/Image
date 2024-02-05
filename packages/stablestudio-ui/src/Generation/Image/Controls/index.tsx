@@ -31,7 +31,7 @@ export function Controls({ image }: { image: Generation.Image }) {
             />
           )}
           transparent
-          className="mr-auto -ml-1"
+          className="-ml-1 mr-auto"
         />
       ),
     [input, createVariations]
@@ -72,14 +72,29 @@ export function Controls({ image }: { image: Generation.Image }) {
       <>
         <div className="pointer-events-none absolute flex h-full w-full flex-col justify-between opacity-0 duration-150 group-hover:opacity-75">
           <div className="h-[6rem] bg-gradient-to-b from-black to-transparent" />
-          <div className="h-[6rem] bg-gradient-to-b from-transparent to-black sm:hidden" />
+          <div className="h-[6rem] bg-gradient-to-b from-transparent to-black" />
         </div>
-        <div className="pointer-events-none absolute flex h-full w-full flex-col justify-between opacity-0 duration-150 group-hover:opacity-100">
-          <Generation.Image.Controls.Buttons y={-6}>
-            {createVariationsButton}
-            {!isMobileDevice && (
-              <>
-                {editorButton}
+        <div className="pointer-events-none absolute bottom-0 flex h-full w-full flex-col justify-between opacity-0 duration-150 group-hover:opacity-100">
+          <div className="absolute bottom-0 w-full">
+            <Generation.Image.Controls.Buttons y={-6}>
+              {createVariationsButton}
+              {!isMobileDevice && (
+                <>
+                  <Generation.Image.Controls.Button
+                    name="Download image"
+                    icon={Theme.Icon.Download}
+                    onClick={() => download()}
+                    transparent
+                  />
+                  <Generation.Images.Delete.Button images={[image.id]} />
+                </>
+              )}
+            </Generation.Image.Controls.Buttons>
+            {isMobileDevice && (
+              <Generation.Image.Controls.Buttons
+                className="justify-start"
+                y={6}
+              >
                 {initialImageButton}
                 <Generation.Image.Controls.Button
                   name="Download image"
@@ -88,21 +103,9 @@ export function Controls({ image }: { image: Generation.Image }) {
                   transparent
                 />
                 <Generation.Images.Delete.Button images={[image.id]} />
-              </>
+              </Generation.Image.Controls.Buttons>
             )}
-          </Generation.Image.Controls.Buttons>
-          {isMobileDevice && (
-            <Generation.Image.Controls.Buttons className="justify-start" y={6}>
-              {initialImageButton}
-              <Generation.Image.Controls.Button
-                name="Download image"
-                icon={Theme.Icon.Download}
-                onClick={() => download()}
-                transparent
-              />
-              <Generation.Images.Delete.Button images={[image.id]} />
-            </Generation.Image.Controls.Buttons>
-          )}
+          </div>
         </div>
       </>
     ),

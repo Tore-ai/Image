@@ -69,18 +69,25 @@ import {
 import {
   ArtStation,
   AspectRatio,
+  Billing,
   CGSociety,
+  Close,
   Discord,
   Dream,
+  Floppy,
   Generate,
   InfoIcon,
   Instagram,
   ModelIcon,
+  Negative,
+  Positive,
+  Profile,
   Rectangle,
   Scale,
   ShareIcon,
   SlidersIcon,
   Steps,
+  Subscribe,
   Twitter,
   Upscale,
   Variation,
@@ -169,6 +176,13 @@ export declare namespace Icon {
     Upscale,
     Keyboard,
     ChevronsLeftRight,
+    Positive,
+    Negative,
+    Profile,
+    Billing,
+    Subscribe,
+    Floppy,
+    Close,
   };
 }
 
@@ -262,6 +276,13 @@ export namespace Icon {
   Icon.Upscale = makeComponent(Upscale);
   Icon.Keyboard = makeComponent(Keyboard);
   Icon.ChevronsLeftRight = makeComponent(ChevronsLeftRight);
+  Icon.Negative = makeComponent(Negative);
+  Icon.Positive = makeComponent(Positive);
+  Icon.Profile = makeComponent(Profile);
+  Icon.Billing = makeComponent(Billing);
+  Icon.Subscribe = makeComponent(Subscribe);
+  Icon.Floppy = makeComponent(Floppy);
+  Icon.Close = makeComponent(Close);
 
   export function Invisible(props: Props) {
     return (

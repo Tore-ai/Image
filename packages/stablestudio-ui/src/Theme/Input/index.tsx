@@ -34,6 +34,7 @@ export type Input = Styleable & {
   size?: Theme.Common.Size;
   transparent?: boolean;
   type?: "text" | "password" | "number" | "email" | "url";
+  className?: string;
 };
 
 export function Input(props: Input) {
@@ -85,7 +86,7 @@ function AutosizeTextArea({
     <textarea
       ref={textareaRef}
       className={classes(
-        "dark:placeholder:text-muted-white w-full resize-none overflow-y-clip rounded text-black shadow-sm focus:border-transparent focus:outline-none dark:border-transparent dark:text-white",
+        "dark:placeholder:text-muted-white w-full resize-none overflow-y-clip rounded text-black shadow-sm focus:outline-none dark:border-transparent dark:text-white",
 
         size === "sm"
           ? "h-8 px-2 py-1 text-sm"
@@ -179,7 +180,7 @@ function SingleInput({
   }, [loading, iconLeft, iconRight]);
 
   return (
-    <div className={classes("relative", fullWidth && "w-full", className)}>
+    <div className={classes("relative", fullWidth && "w-full")}>
       {icons.left && (
         <div className="pointer-events-none absolute bottom-0 left-0 top-0 flex items-center justify-center pl-3">
           {icons.left}
@@ -188,12 +189,13 @@ function SingleInput({
       <input
         ref={inputRef}
         className={classes(
-          "dark:placeholder:text-muted-white h-full w-full rounded bg-zinc-100/75 text-black shadow-sm focus:border-transparent focus:outline-none dark:border-none dark:bg-white/5 dark:text-white",
+          "dark:placeholder:text-muted-white h-full w-full rounded bg-zinc-100/75 text-black shadow-sm focus:outline-none dark:bg-white/5 dark:text-white",
           sizing,
           props.disabled && "cursor-not-allowed bg-black/10",
           transparent && "bg-transparent dark:bg-transparent",
           !!iconLeft && "pl-9",
-          !!iconRight && "pr-9"
+          !!iconRight && "pr-9",
+          className
         )}
         placeholder={props.placeholder}
         disabled={props.disabled}
