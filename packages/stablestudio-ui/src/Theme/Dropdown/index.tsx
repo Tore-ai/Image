@@ -127,7 +127,7 @@ export function Dropdown<Options extends Dropdown.Options>({
 export namespace Dropdown {
   export type Options = Item[];
   export type Item = {
-    price: string;
+    price?: string;
     value: string;
     label: React.ReactNode;
     icon?: React.ReactNode;

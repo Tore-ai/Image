@@ -1,6 +1,7 @@
 import { Generation } from "~/Generation";
 import { GlobalState } from "~/GlobalState";
 import { Theme } from "~/Theme";
+import { Dropdown } from "~/Theme/Dropdown";
 
 export function Modal() {
   const { image, setImage, fileName, setFileName, upscale, setUpscale } =
@@ -70,8 +71,8 @@ export function Modal() {
                   fullWidth
                   className="mx-0"
                   options={[
-                    { label: "1x", value: "1x" },
-                    { label: "2x", value: "2x" },
+                    { label: "1x", value: "1x" } as Dropdown.Item,
+                    { label: "2x", value: "2x" } as Dropdown.Item,
                   ]}
                   value={upscale ? "2x" : "1x"}
                   onChange={(value) => setUpscale(value.value === "2x")}
