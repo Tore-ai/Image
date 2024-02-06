@@ -4475,6 +4475,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js-cookie@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "js-cookie@npm:3.0.5"
+  checksum: 2dbd2809c6180fbcf060c6957cb82dbb47edae0ead6bd71cbeedf448aa6b6923115003b995f7d3e3077bfe2cb76295ea6b584eb7196cca8ba0a09f389f64967a
+  languageName: node
+  linkType: hard
+
 "js-sdsl@npm:^4.1.4":
   version: 4.4.0
   resolution: "js-sdsl@npm:4.4.0"
@@ -6878,6 +6885,7 @@ __metadata:
   dependencies:
     cross-env: ^7.0.3
     husky: ^8.0.3
+    js-cookie: ^3.0.5
     lint-staged: ^13.1.2
     rimraf: ^3.0.2
     yarn: ^1.22.19
